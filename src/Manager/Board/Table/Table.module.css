@@ -1,0 +1,8 @@
+.table{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    justify-content: center;
+    row-gap: 5px;
+    column-gap: 5px;
+}

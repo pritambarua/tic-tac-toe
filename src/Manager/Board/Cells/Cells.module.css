@@ -1,0 +1,17 @@
+.box {
+    border: 2px solid black;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+    background-color: #2196F3;
+    box-shadow: 4px 4px #999;
+}
+
+.box:hover {
+    background-color: #0e66ad;
+}
+
+.box:active {
+    transform: translateY(4px);
+    box-shadow: 4px 5px #666;
+  }
