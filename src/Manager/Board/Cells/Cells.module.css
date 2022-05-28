@@ -5,6 +5,7 @@
     cursor: pointer;
     background-color: #2196F3;
     box-shadow: 4px 4px #999;
+    color: black;
 }
 
 .box:hover {

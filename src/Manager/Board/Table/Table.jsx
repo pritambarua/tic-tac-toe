@@ -9,7 +9,9 @@ function table(props) {
         {
             board.map((row, rowIndex) => 
                     row.map((element, colIndex) => 
-                            <Cells key = {`${rowIndex}${colIndex}`} 
+                            <Cells key = {`${rowIndex}${colIndex}`}
+                                   row= {rowIndex}
+                                   col = {colIndex}
                                    value = {element}>
                             </Cells>))
         }
