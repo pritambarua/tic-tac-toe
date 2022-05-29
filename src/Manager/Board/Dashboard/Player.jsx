@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { names } from '../../PlayerForm/initializePlayers';
+import { data } from '../../HomePage/initializePlayers';
 
 function Player({turn}) {
-  const getName = useSelector(names);
+  const getName = useSelector(data);
     
   return (
       <b>

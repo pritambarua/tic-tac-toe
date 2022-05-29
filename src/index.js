@@ -5,12 +5,24 @@ import reportWebVitals from './reportWebVitals';
 import Manager from './Manager/Manager';
 import { store } from './store';
 import { Provider } from 'react-redux';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CreateRoom from './Manager/HomePage/createRoom';
+import JoinRoom from './Manager/HomePage/joinRoom';
+import Homepage from './Manager/HomePage/Homepage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
     <Provider store = {store}>
-      <Manager></Manager>
+    <BrowserRouter>
+    <Routes>
+      <Route index element={<Homepage />}></Route>
+      <Route path='start' element={<Manager />}></Route>
+      <Route path='create' element={<CreateRoom />}></Route>
+      <Route path='join' element={<JoinRoom />}></Route>
+      </Routes>
+    </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

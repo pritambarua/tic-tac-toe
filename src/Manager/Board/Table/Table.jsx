@@ -3,7 +3,7 @@ import Cells from '../Cells/Cells';
 import styles from './Table.module.css'
 
 function table(props) {
-    const {board} = props;
+    const {board, isDisabled} = props;
   return (
     <div className={styles.table}>
         {
@@ -12,7 +12,9 @@ function table(props) {
                             <Cells key = {`${rowIndex}${colIndex}`}
                                    row= {rowIndex}
                                    col = {colIndex}
-                                   value = {element}>
+                                   value = {element}
+                                   isDisabled = {isDisabled}
+                                   >
                             </Cells>))
         }
     </div>

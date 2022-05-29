@@ -2,10 +2,13 @@
     border: 2px solid black;
     text-align: center;
     padding: 30px;
-    cursor: pointer;
     background-color: #2196F3;
     box-shadow: 4px 4px #999;
     color: black;
+}
+
+.wait {
+    cursor: wait
 }
 
 .box:hover {

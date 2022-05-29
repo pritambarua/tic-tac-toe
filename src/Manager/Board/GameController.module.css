@@ -1,0 +1,7 @@
+.manager {
+    pointer-events: 'none', 
+}
+
+.manager:hover {
+    cursor: wait;
+}
