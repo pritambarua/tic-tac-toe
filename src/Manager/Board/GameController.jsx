@@ -4,12 +4,12 @@ import Player from './Dashboard/Player';
 import styles from './GameController.module.css'
 
 function Board(props) {
-    const {board, turn, isDisabled} = props
+    const {board, turn, isDisabled, state} = props
 
   return (
-    <div>
+    <div style={{marginTop: '20%'}}>
         <Player turn={turn}></Player>
-        <Table board = {board} isDisabled= {isDisabled}></Table>
+        <Table state = {state} board = {board} isDisabled= {isDisabled}></Table>
     </div>
   )
 }

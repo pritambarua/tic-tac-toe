@@ -4,6 +4,7 @@ import db from '../../firebase.config';
 import {handleRoomChange ,handleNameChange, data, handleMyself} from './initializePlayers'
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router';
+import { Button, CircularProgress, TextField } from '@mui/material';
 
 const getRandom = () => Math.floor(Math.random()*90000) + 10000;
 const setPlayer1 = (name, roomCode, setIsNameEntered) => {
@@ -60,20 +61,22 @@ function CreateRoom(props) {
   }, [players.room])
 
   return (
-    <div>
+    <div style= {{display: 'grid',padding: 20, rowGap: '50%', marginTop: '20%', textAlign: 'center'}}>
         {
-            isNameEntered ?  <div>
-            {!startGame ? 
-            `Ask the other player to enter this room code ${players.room}` : 
-            navigate('/start')
-            }
-            
-            </div> :
-            <div>
-            <label>Enter Your name : </label>
-            <input onChange = {(e) => dispatch(handleNameChange({name: 'player1', value: e.target.value}))}></input>
-            <button onClick = {() => setPlayer1(players.player1, players.room, setIsNameEntered)} > Submit </button> 
-            </div>
+            isNameEntered ? 
+            !startGame ? <>
+             <span>{`Your Room Code`}</span>
+             <span><Button size="large" variant="contained">{players.room}</Button></span>
+             <span> Waiting for others to join your room</span>
+             <span><CircularProgress></CircularProgress></span>
+             </>
+              : navigate('/start')
+            :
+            <>
+            <TextField id="outlined-basic" label="Enter Your name" variant="filled" 
+            onChange = {(e) => dispatch(handleNameChange({name: 'player1', value: e.target.value}))}/>
+            <Button size="large" variant="contained" onClick = {() => setPlayer1(players.player1, players.room, setIsNameEntered)} > Submit </Button> 
+            </>
         }
        
     </div>

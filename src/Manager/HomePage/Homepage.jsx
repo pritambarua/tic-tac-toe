@@ -1,18 +1,18 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import styles from './Homepage.module.css'
+import Button from '@mui/material/Button';
+import { Box } from '@mui/system';
 
 function Homepage() {
+
   return (
-      <>
-           <nav>
-               <ul>
-                   <li><Link to="/create"> Create Room </Link></li>
-                   <li><Link to="/join"> Join Room </Link></li>
-               </ul>
-           </nav>
-           
-           <Outlet />
-      </>
+    
+      <div className={styles.homepage}>
+      <Button size="large" variant="contained" component={Link} to="/create">Create Room</Button>
+      <Button size="large" variant="contained" component={Link} to="/join"> Join Room </Button>
+      <Outlet />
+      </div>
   )
 }
 

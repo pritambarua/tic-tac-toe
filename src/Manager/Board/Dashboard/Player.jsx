@@ -7,7 +7,7 @@ function Player({turn}) {
     
   return (
       <b>
-        {getName[`player${turn}`]}
+        Current Player : {getName[`player${turn}`]}
       </b>
   )
 }

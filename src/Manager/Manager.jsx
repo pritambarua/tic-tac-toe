@@ -40,9 +40,11 @@ function Manager() {
   }, []);
 
   return (
-        !state && chances > 0 ? 
-        <Board board={boardData} turn={playerTurn} isDisabled = {players.myself !== playerTurn}></Board> :
-        chances === 0 ? 'Its a Draw' : `Hurrah ${players[`player${playerTurn}`]}  won`
+    <>
+        <Board board={boardData} state={state} turn={playerTurn} isDisabled = {players.myself !== playerTurn}></Board>
+        {state ?
+        chances === 0 ? 'Its a Draw' : `Hurrah ${players[`player${playerTurn}`]}  won` : ''}
+    </>
   )
 }
 

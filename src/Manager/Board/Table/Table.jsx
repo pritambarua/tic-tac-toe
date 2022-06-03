@@ -3,9 +3,9 @@ import Cells from '../Cells/Cells';
 import styles from './Table.module.css'
 
 function table(props) {
-    const {board, isDisabled} = props;
+    const {board, isDisabled, state} = props;
   return (
-    <div className={styles.table}>
+    <div className={styles.table} style={state ? {pointerEvents: 'none'} : {}}>
         {
             board.map((row, rowIndex) => 
                     row.map((element, colIndex) => 
