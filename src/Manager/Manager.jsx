@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { data, handleNameChange } from './HomePage/initializePlayers';
 import { board, chancesLeft, changeBoardState, changeChancesleft, changeGameOver, changeTurn, currentPlayer, gameState } from './Board/GameController.config';
 import { deserialize } from './Helpers/helper';
+import Result from './Replay/replay';
 
 function Manager() {
 
@@ -26,11 +27,11 @@ function Manager() {
     });
 
     onSnapshot(docRef, (doc) => {
-      console.log(doc.data());
       const {board: fetchedboard, gameOver, turn, chancesLeft} = doc.data();
       const ans = deserialize(fetchedboard);
+      const gameOverState = chancesLeft === 0 ? true : gameOver;
       dispatch(changeBoardState(ans));
-      dispatch(changeGameOver(gameOver));
+      dispatch(changeGameOver(gameOverState));
       dispatch(changeTurn(turn));
       dispatch(changeChancesleft(chancesLeft));
     });
@@ -42,8 +43,7 @@ function Manager() {
   return (
     <>
         <Board board={boardData} state={state} turn={playerTurn} isDisabled = {players.myself !== playerTurn}></Board>
-        {state ?
-        chances === 0 ? 'Its a Draw' : `Hurrah ${players[`player${playerTurn}`]}  won` : ''}
+        <Result state = {state} chances = {chances} turn = {playerTurn}/>
     </>
   )
 }

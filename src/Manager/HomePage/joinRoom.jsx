@@ -13,7 +13,6 @@ const setPlayer2 = (name, roomCode, navigate) => {
             player2: name,
             playersInitialized: true,
         }).then((curr) => {
-            console.log(curr);
             navigate('/start');
         }).catch((error) => {
             alert('No such Room Code Exist')

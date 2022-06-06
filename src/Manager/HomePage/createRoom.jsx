@@ -13,7 +13,7 @@ const setPlayer1 = (name, roomCode, setIsNameEntered) => {
     updateDoc(roomRef, {
             player1: name,
         }).then((curr) => {
-            console.log(curr);
+            
         }).catch((error) => {
             alert('No such Room Code Exist')
         })
@@ -47,8 +47,7 @@ function CreateRoom(props) {
       })
   
       const unsub = onSnapshot(doc(db, "Gamerooms", players.room), (doc) => {
-          console.log(players.room);
-          console.log("Current data: ", doc.data());
+          
           const {playersInitialized} = doc.data();
           setStartGame(playersInitialized);
         });

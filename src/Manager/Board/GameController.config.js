@@ -45,8 +45,8 @@ export const controller = createSlice({
                 turn: state.currentPlayer,
                 chancesLeft: state.chancesLeft,
                 gameOver: state.gameState
-            }).then((curr) => {
-                console.log(curr);
+            }).then(() => {
+                
             }).catch((error) => {
                 alert('No such Room Code Exist')
             })
