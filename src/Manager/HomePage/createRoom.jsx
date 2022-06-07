@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { doc, setDoc, onSnapshot, updateDoc, deleteDoc } from "firebase/firestore"; 
+import React, { useEffect, useState } from 'react'
+import { doc, setDoc, onSnapshot, updateDoc } from "firebase/firestore"; 
 import db from '../../firebase.config';
 import {handleRoomChange ,handleNameChange, data, handleMyself} from './initializePlayers'
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Button, CircularProgress, TextField } from '@mui/material';
 
 const getRandom = () => Math.floor(Math.random()*90000) + 10000;
