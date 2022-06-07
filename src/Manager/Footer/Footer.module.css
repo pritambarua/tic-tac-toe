@@ -1,0 +1,14 @@
+.footer {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    display: flex;
+    cursor: pointer;
+    left: 50%;
+    bottom: 2%;
+}
+
+.love{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: red
+}

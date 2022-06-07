@@ -13,6 +13,7 @@ import { Box } from '@mui/system';
 import styles from './index.module.css'
 import Header from './Manager/Header/Header';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Footer from './Manager/Footer/Footer';
 
 const darkTheme = createTheme({
   palette: {
@@ -37,6 +38,7 @@ root.render(
     </BrowserRouter>
     </Provider>
     </Box>
+    <Footer></Footer>
     </ThemeProvider>
   </React.StrictMode>
 );
